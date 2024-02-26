@@ -34,7 +34,9 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('short break'),
+              SizedBox(width: 12),
               Text('short break'),
+              SizedBox(width: 12),
               Text('short break'),
             ],
           ),
@@ -43,11 +45,14 @@ class HomePage extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF1B1F3B),
               shape: CircleBorder(),
-              
             ),
-            child: Icon(
-              Icons.play_arrow_outlined,
-              color: Color(0xFFFCF7F8),
+            child: Padding(
+              padding: const EdgeInsets.all(14.5),
+              child: Icon(
+                Icons.play_arrow_rounded,
+                color: Color(0xFFFCF7F8),
+                size: 38,
+              ),
             ),
           ),
         ],
