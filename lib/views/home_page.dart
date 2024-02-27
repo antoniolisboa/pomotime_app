@@ -25,9 +25,9 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
-            'English Studies',
-            style: TextStyles.regular,
+          DropdownButton(
+            items: null,
+            onChanged: (String? value) {},
           ),
           const SizedBox(height: 54),
           const PomodoroTimer(),
