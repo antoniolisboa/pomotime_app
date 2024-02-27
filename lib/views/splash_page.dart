@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pomotime_app/util/app_colors.dart';
+import 'package:pomotime_app/util/text_styles.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -9,11 +11,10 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        color: const Color(0xFF1B1F3B),
+        color: AppColors.primaryColor,
         child: Text(
-          style: GoogleFonts.getFont(
-            'Montserrat',
-            color: const Color(0xFFFCF7F8),
+          style: TextStyles.regular.copyWith(
+            color: AppColors.secondColor,
             fontSize: 28,
           ),
           'PomoTime',
