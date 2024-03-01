@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:pomotime_app/widgets/pomodoro_button_group.dart';
 import 'package:pomotime_app/widgets/pomodoro_timer.dart';
+import 'package:pomotime_app/widgets/pomodoro_settings_selector_dropdown.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,20 +21,17 @@ class HomePage extends StatelessWidget {
           'PomoTime',
         ),
       ),
-      body: Column(
+      body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          DropdownButton(
-            items: null,
-            onChanged: (String? value) {},
-          ),
-          const SizedBox(height: 54),
-          const PomodoroTimer(),
-          const SizedBox(height: 82),
-          const PomodoroButtonGrup(),
-          const SizedBox(height: 52),
-          const MediaControlButton(),
+          PomodoroSettingsSelectorDropdown(),
+          SizedBox(height: 54),
+          PomodoroTimer(),
+          SizedBox(height: 82),
+          PomodoroButtonGrup(),
+          SizedBox(height: 52),
+          MediaControlButton(),
         ],
       ),
     );
