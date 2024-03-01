@@ -12,10 +12,10 @@ class PomodoroTimer extends StatelessWidget {
       width: 200,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: AppColors.secondColor,
+        color: AppColors.snow,
         shape: BoxShape.circle,
         border: Border.all(
-          color: AppColors.primaryColor,
+          color: AppColors.spaceCadet,
           width: 1,
         ),
       ),

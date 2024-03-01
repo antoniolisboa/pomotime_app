@@ -20,7 +20,7 @@ class _MediaControlButtonState extends State<MediaControlButton> {
         });
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF1B1F3B),
+        backgroundColor: AppColors.spaceCadet,
         shape: const CircleBorder(),
         elevation: 10,
       ),
@@ -28,7 +28,7 @@ class _MediaControlButtonState extends State<MediaControlButton> {
         padding: const EdgeInsets.all(14.5),
         child: Icon(
           (_isPlay) ? Icons.play_arrow_rounded : Icons.pause_rounded,
-          color: AppColors.secondColor,
+          color: AppColors.snow,
           size: 38,
         ),
       ),

@@ -10,10 +10,10 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        color: AppColors.primaryColor,
+        color: AppColors.spaceCadet,
         child: Text(
           style: TextStyles.regular.copyWith(
-            color: AppColors.secondColor,
+            color: AppColors.snow,
             fontSize: 28,
           ),
           'PomoTime',

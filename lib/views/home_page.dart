@@ -1,5 +1,4 @@
 import 'package:pomotime_app/widgets/media_control_button.dart';
-import 'package:pomotime_app/util/text_styles.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:pomotime_app/widgets/pomodoro_button_group.dart';

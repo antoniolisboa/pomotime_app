@@ -7,14 +7,14 @@ class TextStyles {
 
   static TextStyle regular = GoogleFonts.getFont(
     'Montserrat',
-    color: AppColors.primaryColor,
+    color: AppColors.spaceCadet,
     fontWeight: FontWeight.normal,
     fontSize: 16,
   );
 
   static TextStyle bold = GoogleFonts.getFont(
     'Montserrat',
-    color: AppColors.primaryColor,
+    color: AppColors.spaceCadet,
     fontWeight: FontWeight.bold,
     fontSize: 16,
   );

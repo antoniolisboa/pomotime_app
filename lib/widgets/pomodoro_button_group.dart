@@ -20,12 +20,12 @@ class _PomodoroButtonGrupState extends State<PomodoroButtonGrup> {
   bool _isPomodoroButton = true;
   bool _isLongBreakeButton = false;
 
-  TextStyle selectedModeText = TextStyles.bold.copyWith(
+  TextStyle selectedModeTextStyle = TextStyles.bold.copyWith(
     shadows: [
       const Shadow(
-        offset: Offset(0, 6),
-        blurRadius: 60,
-        color: AppColors.primaryColor,
+        offset: Offset(0, 4),
+        blurRadius: 25,
+        color: AppColors.spaceCadet,
       ),
     ],
   );
@@ -39,54 +39,61 @@ class _PomodoroButtonGrupState extends State<PomodoroButtonGrup> {
           onPressed: () {
             selectTimerMode(TypeTimer.shortBreak);
           },
-          style: TextButton.styleFrom(
-            backgroundColor: Colors.transparent,
-            foregroundColor: Colors.transparent,
-            enableFeedback: false,
-          ),
+          style: pomodoroButtonStyle(),
           child: generatePomodoroButtonText(
             'short break',
             _isShortBreakButton,
           ),
         ),
+        
         const SizedBox(width: 12),
-        TextButton(
-          onPressed: () {
-            selectTimerMode(TypeTimer.pomodoro);
-          },
-          style: TextButton.styleFrom(
-            backgroundColor: Colors.transparent,
-            foregroundColor: Colors.transparent,
-            enableFeedback: false,
-          ),
-          child: generatePomodoroButtonText(
-            'pomodoro',
-            _isPomodoroButton,
-          ),
+        pomodoroButton(
+          text: 'pomodoro',
+          isPressed: _isPomodoroButton,
+          typeTimer: TypeTimer.pomodoro,
         ),
         const SizedBox(width: 12),
-        TextButton(
-          onPressed: () {
-            selectTimerMode(TypeTimer.longBreak);
-          },
-          style: TextButton.styleFrom(
-            backgroundColor: Colors.transparent,
-            foregroundColor: Colors.transparent,
-            enableFeedback: false,
-          ),
-          child: generatePomodoroButtonText(
-            'long break',
-            _isLongBreakeButton,
-          ),
+        pomodoroButton(
+          text: 'long break',
+          isPressed: _isLongBreakeButton,
+          typeTimer: TypeTimer.longBreak,
         ),
       ],
     );
   }
 
-  Text generatePomodoroButtonText(String text, bool isOn) {
+  Text generatePomodoroButtonText(String text, bool isPressed) {
     return Text(
       text,
-      style: (isOn) ? selectedModeText : TextStyles.regular,
+      style: (isPressed) ? selectedModeTextStyle : TextStyles.regular,
+    );
+  }
+
+  TextButton pomodoroButton(
+      {required String text,
+      required bool isPressed,
+      required TypeTimer typeTimer}) {
+    return TextButton(
+      onPressed: () {
+        selectTimerMode(typeTimer);
+      },
+      style: pomodoroButtonStyle(),
+      child: generatePomodoroButtonText(
+        text,
+        isPressed,
+      ),
+    );
+  }
+
+  ButtonStyle pomodoroButtonStyle() {
+    return TextButton.styleFrom(
+      backgroundColor: AppColors.transparent,
+      foregroundColor: AppColors.white,
+      disabledBackgroundColor: AppColors.transparent,
+      disabledForegroundColor: AppColors.transparent,
+      enableFeedback: false,
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      splashFactory: NoSplash.splashFactory,
     );
   }
 
